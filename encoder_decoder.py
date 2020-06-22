@@ -327,7 +327,7 @@ decoder = AttnDecoderRNN(hidden_size, vocab_words, max_length, dropout_p=0.1).to
 
 epochs = 20
 temp_path = "./bot_temp_v2.pth"
-final_path = "./bot.pth"
+final_path = "./bot_v2.pth"
 
 print(dataset.VOCAB_INDEX)
 trainIters(encoder, decoder, dataloader, epochs, temp_path, learning_rate=0.0001)
