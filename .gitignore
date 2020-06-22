@@ -1,6 +1,8 @@
 # Models
-*pth
 
 # Data
 *.tsv
 *.csv
+
+# Env
+venv/
