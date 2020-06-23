@@ -128,7 +128,5 @@ checkpoint = torch.load(temp_path, map_location=torch.device('cpu'))
 encoder.load_state_dict(checkpoint["encoder"])
 decoder.load_state_dict(checkpoint["decoder"])
 
-if __name__ == "__main__":
-
-    app.run()
+app.run()
 
