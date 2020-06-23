@@ -1,4 +1,4 @@
-from models.encoder_decoder import MessageDataset, EncoderRNN, AttnDecoderRNN, evaluate, play
+from encoder_decoder import MessageDataset, EncoderRNN, AttnDecoderRNN, evaluate, play
 
 import torch
 
