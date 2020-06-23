@@ -1,12 +1,12 @@
 # Notebook
+__pycache__
 *.ipynb
 
 # Models
 
 # Data
 *.csv
-message_dataloader.pth
-message_dataset.pth
+*pth
 
 # Env
 venv/
