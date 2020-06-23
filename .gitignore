@@ -4,7 +4,6 @@
 # Models
 
 # Data
-*.tsv
 *.csv
 message_dataloader.pth
 message_dataset.pth
