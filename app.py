@@ -17,9 +17,12 @@ def hello_world():
 
 @app.route('/text', methods=["GET", "POST"])
 def respond():
+    answer = {"response": None}
     text = request.json["text"]
     response = play(text, encoder, decoder, dataset)
-    return jsonify(response)
+    response = response.replace(" <EOS>", "")
+    answer["response"] = response
+    return jsonify(answer)
 
 dataset = torch.load(DATASET_PATH)
 vocab_words = dataset.word_num

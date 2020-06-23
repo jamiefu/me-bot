@@ -22,7 +22,7 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 
 # In[ ]:
-
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 #print(string.punctuation)
 
@@ -332,7 +332,7 @@ def trainIters(encoder, decoder, dataloader, epochs, temp_path, learning_rate=0.
 def evaluate(encoder, decoder, dataset, text, max_length):
     with torch.no_grad():
         input_tensor = build_input(text, dataset)
-        if device != "cpu":
+        if device == "cuda:0":
             input_tensor = input_tensor.cuda()
         print(input_tensor.size())
         input_length = input_tensor.size(0)
@@ -395,9 +395,11 @@ def build_input(text, dataset):
 
 
 def play(text, encoder, decoder, dataset):
+    max_length = dataset.max_message
     output_words, attentions = evaluate(encoder, decoder, dataset, text, max_length)
     output_sentence = ' '.join(output_words)
     print(output_sentence)
+    return output_sentence
 
 # checkpoint = torch.load(temp_path)
 # encoder.load_state_dict(checkpoint["encoder"])
