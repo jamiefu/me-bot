@@ -5,7 +5,10 @@ __pycache__
 # Models
 
 # Data
+# Comment *.tsv when pushing to heroku
+*.tsv 
 *.csv
+# Change to just the dataset and dataloader when pushing to heroku
 *pth
 
 # Env
