@@ -122,6 +122,7 @@ class MessageDataset(Dataset):
 
 # In[121]:
 
+dataset = MessageDataset(message_path)
 
 # try:
 #     dataset = torch.load(DATASET_PATH)
