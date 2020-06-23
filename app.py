@@ -18,7 +18,10 @@ def respond():
     answer = {"response": None}
     text = request.json["text"]
     response = play(text, encoder, decoder, dataset)
-    response = response.replace(" <EOS>", "")
+    if response == "<EOS>":
+        response = "my bot said there was nothing to say, so here it is: nothing"
+    else:
+        response = response.replace(" <EOS>", "")
     answer["response"] = response
     return jsonify(answer)
 
