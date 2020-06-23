@@ -21,9 +21,12 @@ def respond():
     response = play(text, encoder, decoder, dataset)
     return jsonify(response)
 
-dataset = torch.load(DATASET_PATH)
-vocab_words = dataset.word_num
-max_length = dataset.max_message
+# dataset = torch.load(DATASET_PATH)
+# vocab_words = dataset.word_num
+# max_length = dataset.max_message
+
+vocab_words = 20202
+max_length = 801
 # dataloader = torch.load(DATALOADER_PATH)
 # print("Loaded dataset and dataloader from paths")
 
