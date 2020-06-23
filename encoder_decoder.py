@@ -118,7 +118,7 @@ class MessageDataset(Dataset):
 
 
 dataset = torch.load(DATASET_PATH)
-torch_save(dataset, DATASET_PATH)
+# torch_save(dataset, DATASET_PATH)
 
 # In[121]:
 
@@ -409,20 +409,21 @@ def play(text, encoder, decoder, dataset):
 # encoder.load_state_dict(checkpoint["encoder"])
 # decoder.load_state_dict(checkpoint["decoder"])
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
 
-#     print("hi")
+    print("hi")
+    torch_save(dataset, DATASET_PATH)
 
-#     # print(dataset.VOCAB_INDEX)
-#     # trainIters(encoder, decoder, dataloader, epochs, temp_path, learning_rate=0.0001)
-#     # torch.save({"encoder": encoder.state_dict(), "decoder": decoder.state_dict()}, final_path)
-#     # print("Saved model at final path!")
+    # print(dataset.VOCAB_INDEX)
+    # trainIters(encoder, decoder, dataloader, epochs, temp_path, learning_rate=0.0001)
+    # torch.save({"encoder": encoder.state_dict(), "decoder": decoder.state_dict()}, final_path)
+    # print("Saved model at final path!")
 
-#     # playing = True
-#     # while playing:
-#     #     print("Don't enter anything if you want to stop")
-#     #     input_text = input("Text me: ")
-#     #     if input_text == "":
-#     #         playing = False
-#     #     else:
-#     #         play(input_text, encoder, decoder, dataset)
+    # playing = True
+    # while playing:
+    #     print("Don't enter anything if you want to stop")
+    #     input_text = input("Text me: ")
+    #     if input_text == "":
+    #         playing = False
+    #     else:
+    #         play(input_text, encoder, decoder, dataset)
