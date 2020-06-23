@@ -1,3 +1,4 @@
+import encoder_decoder
 from encoder_decoder import dataset, EncoderRNN, AttnDecoderRNN, evaluate, play
 
 import torch
@@ -44,5 +45,6 @@ encoder.load_state_dict(checkpoint["encoder"])
 decoder.load_state_dict(checkpoint["decoder"])
 
 if __name__ == "__main__":
+    from encoder_decoder import *
     app.run()
 
