@@ -3,6 +3,7 @@
 # Data
 *.tsv
 *.csv
+message_dataloader.pth
 
 # Env
 venv/

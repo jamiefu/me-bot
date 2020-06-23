@@ -24,8 +24,8 @@ def respond():
 dataset = torch.load(DATASET_PATH)
 vocab_words = dataset.word_num
 max_length = dataset.max_message
-dataloader = torch.load(DATALOADER_PATH)
-print("Loaded dataset and dataloader from paths")
+# dataloader = torch.load(DATALOADER_PATH)
+# print("Loaded dataset and dataloader from paths")
 
 hidden_size = 256
 encoder = EncoderRNN(vocab_words, hidden_size).to(device)
