@@ -1,5 +1,5 @@
 # me-bot
-Trained a Facebook chatbot to talk like me using my Facebook Messenger direct message data from June 2019 - June 2020. You can find it here: m.me/jmebot (Facebook app is still in dev mode, so it won't respond unless you're verified as a tester, but contact me at hey@jamiefu.me if you want to try it and I'll add you). 
+Trained a Facebook chatbot to talk like me using my Facebook Messenger direct message data from June 2019 - June 2020. You can find it here: m.me/jmebot (Facebook app is still in dev mode because bureaucratic procedures and whatnot, so it won't respond unless you're verified as a tester, but contact me at hey@jamiefu.me if you want to try it and I'll add you). 
 
 Below are a few of the resources I used to create this:
 - https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html#loading-data-files
