@@ -116,6 +116,8 @@ class MessageDataset(Dataset):
         return words
 
 
+dataset = torch.load(DATASET_PATH)
+
 # In[121]:
 
 

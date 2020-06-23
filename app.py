@@ -1,4 +1,4 @@
-from encoder_decoder import MessageDataset, EncoderRNN, AttnDecoderRNN, evaluate, play
+from encoder_decoder import dataset, EncoderRNN, AttnDecoderRNN, evaluate, play
 
 import torch
 
@@ -24,7 +24,6 @@ def respond():
     answer["response"] = response
     return jsonify(answer)
 
-dataset = torch.load(DATASET_PATH)
 vocab_words = dataset.word_num
 max_length = dataset.max_message
 
