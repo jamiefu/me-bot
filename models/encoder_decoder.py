@@ -30,9 +30,6 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # In[ ]:
 
 
-SOS_token = 0
-EOS_token = 1
-
 message_path = "./messages.tsv"
 
 DATASET_PATH = "./message_dataset.pth"
@@ -46,6 +43,9 @@ class MessageDataset(Dataset):
     def __init__(self, message_file):
         self.filepath = message_file
         self.punctuation = {"?", "!", ":", "/", ";"}
+
+        self.SOS_token = 0
+        self.EOS_token = 1
 
         self.VOCAB_INDEX = {}
         self.INDEX_VOCAB = {0: "<sos>", 1: "<eos>"}
@@ -93,12 +93,12 @@ class MessageDataset(Dataset):
         for i,tok in enumerate(you):
             ind = self.VOCAB_INDEX[tok]
             you_indices[i] = ind
-        you_indices[len(you)] = EOS_token
+        you_indices[len(you)] = self.EOS_token
         
         for i,tok in enumerate(me):
             ind = self.VOCAB_INDEX[tok]
             me_indices[i] = ind
-        me_indices[len(me)] = EOS_token
+        me_indices[len(me)] = self.EOS_token
 
         you_np = np.asarray(you_indices)
         me_np = np.asarray(me_indices)
