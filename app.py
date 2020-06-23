@@ -25,6 +25,7 @@ def respond():
     answer["response"] = response
     return jsonify(answer)
 
+dataset = torch.load(DATASET_PATH)
 vocab_words = dataset.word_num
 max_length = dataset.max_message
 
